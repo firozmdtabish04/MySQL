@@ -360,6 +360,36 @@ select rand(2);
 
 
 
+    dept_id INT,
+    FOREIGN KEY(dept_id)
+    REFERENCES Department(dept_id)
+);
+
+INSERT INTO Employeee
+VALUES
+(101,'Rahul',50000,1),
+(102,'Amit',40000,2),
+(103,'Priya',60000,3),
+(104,'John',70000,1),
+(105,'David',45000,NULL);
+
+select e.emp_name, e.salary , d.dept_name from Employeee e  inner join Department d on e.dept_id = d.dept_id;
+
+select * from Employeee;
+select * from Department;
+update  Employeee set dept_id = 1 where emp_name = "Rahul"; 
+
+SELECT *
+FROM Employeee e
+LEFT JOIN Department d
+ON e.dept_id=d.dept_id;
+
+SELECT * FROM Employeee e
+RIGHT JOIN Department d
+ON e.dept_id=d.dept_id;
+
+alter table Employeee add column manager_id int ;
+update Employeee set dept_id = 1 where emp_id =101;
 
 
 
