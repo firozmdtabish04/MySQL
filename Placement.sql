@@ -413,7 +413,14 @@ alter table Employeee add column manager_id int ;
 update Employeee set dept_id = 1 where emp_id =101;
 
 
-
+SELECT d.dept_name,
+COUNT(e.emp_id) AS total_employees,
+AVG(e.salary) AS average_salary
+FROM Department d
+LEFT JOIN Employeee e
+ON d.dept_id = e.dept_id
+GROUP BY d.dept_name
+ORDER BY average_salary DESC;
 
 
 
