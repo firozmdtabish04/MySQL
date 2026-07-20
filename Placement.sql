@@ -357,9 +357,30 @@ select pow(10, 3);
 select power(10,3);
 
 select rand(2);
+    dept_id INT,
+    FOREIGN KEY(dept_id)
+    REFERENCES Department(dept_id)
+);
 
 
 
+
+-- Phase: 5 Joins 
+use companydb;
+
+create table Department (
+dept_id int primary key auto_increment,
+dept_name varchar(40)
+);
+
+insert into Department(dept_name) values("IT"),("HR"),("Finance"),("Marketing");
+select * from Department;
+show tables;
+
+CREATE TABLE Employeee(
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    salary DECIMAL(10,2),
     dept_id INT,
     FOREIGN KEY(dept_id)
     REFERENCES Department(dept_id)
@@ -390,81 +411,6 @@ ON e.dept_id=d.dept_id;
 
 alter table Employeee add column manager_id int ;
 update Employeee set dept_id = 1 where emp_id =101;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
