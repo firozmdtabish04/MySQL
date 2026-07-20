@@ -7,7 +7,6 @@ SHOW DATABASES;
 
 USE placement;
 
-
 CREATE TABLE subjects (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100),
